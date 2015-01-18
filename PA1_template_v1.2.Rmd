@@ -35,12 +35,9 @@ if (!file.exists("activity.csv")) {
         download.file(fileUrl, destfile = "activity.zip", method = "curl")
         unzip("activity.zip")
 }
-else{
-        print("Loading existing data")        
-}
 
 #load the data with read.table function
-
+print("Loading existing data")
 activity_data<- read.table("./activity.csv", header=T, sep=',', na.strings="NA", colClasses=c("numeric", "character", "numeric"))
 print("Loading completed")
 ```
